@@ -1,0 +1,42 @@
+body {
+    background-image: url('/fondo5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex
+
+}
+
+
+.container {
+    background-color: rgba(0, 0, 0, 0.3); /* Negro con 50% de transparencia */
+    margin-bottom: 100px; 
+}
+
+h1{
+    color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.white-label {
+    color: white;
+}
+
+#note-tags::placeholder {
+    color: rgba(169, 169, 169, 0.4);
+    opacity: 1;
+}
+
+#search-bar::placeholder {
+    color: rgba(169, 169, 169, 0.4);
+    opacity: 1;
+}
