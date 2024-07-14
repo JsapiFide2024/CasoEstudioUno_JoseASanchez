@@ -1,1 +1,57 @@
-[]
+[
+    {
+      "id": "b6673870-cd47-4244-8140-811433387a1b",
+      "titulo": "Passwords",
+      "contenido": "P@ssw0rd! \nTr0pic@lSunseta\nChocoL@te&C@ffe1ne \n$ecurePa$$123 \nB3@ch+SuN ",
+      "etiquetas": [
+        "Importante",
+        "Passwords"
+      ],
+      "fechaCreacion": "2024-07-14T09:57:48.910Z",
+      "fechaModificacion": "2024-07-14T10:20:33.660Z"
+    },
+    {
+      "id": "650762bf-858e-438e-a33b-a84776059e3c",
+      "titulo": "Costa Rica",
+      "contenido": "Costa Rica es un hermoso pais de centroamerica donde hay mucha diversidad de fauna y flora.",
+      "etiquetas": [
+        "Paises"
+      ],
+      "fechaCreacion": "2024-07-14T09:58:59.850Z",
+      "fechaModificacion": "2024-07-14T09:58:59.850Z"
+    },
+    {
+      "id": "d9a199c0-ca15-4f84-a364-3defdbf477f3",
+      "titulo": "Tarea",
+      "contenido": "Recordatorio de tareas pendientes para la semana: informe de ventas, preparación de reunión.",
+      "etiquetas": [
+        "Tareas",
+        "Recordatorios"
+      ],
+      "fechaCreacion": "2024-07-14T10:00:18.385Z",
+      "fechaModificacion": "2024-07-14T10:02:42.997Z"
+    },
+    {
+      "id": "4cf5cf32-ceb0-44e3-8e3f-f80f4c42a7f3",
+      "titulo": "Compras",
+      "contenido": "Lista de artículos necesarios para la semana: víveres, productos de limpieza, y utensilios de cocina.",
+      "etiquetas": [
+        "Compras",
+        "Hogar"
+      ],
+      "fechaCreacion": "2024-07-14T10:01:25.571Z",
+      "fechaModificacion": "2024-07-14T10:01:25.571Z"
+    },
+    {
+      "id": "703f1da5-ea4a-45a5-8977-06e85d73324c",
+      "titulo": "Investigacion",
+      "contenido": "Ultimos avances en IA, incluyendo redes neuronales profundas y aplicaciones en reconocimiento de voz.",
+      "etiquetas": [
+        "IA",
+        "Investigacion",
+        "Aplicaciones"
+      ],
+      "fechaCreacion": "2024-07-14T10:02:16.385Z",
+      "fechaModificacion": "2024-07-14T10:02:56.444Z"
+    }
+  ]

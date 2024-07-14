@@ -1,19 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const notesGrid = document.getElementById('notes-grid');
-    const addNoteButton = document.getElementById('add-note');
-    const searchBar = document.getElementById('search-bar');
+    const notesGrid = document.getElementById('notes-grid'); //Grid de notas
+    const addNoteButton = document.getElementById('add-note'); //Boton de crear nota nueva
+    const searchBar = document.getElementById('search-bar'); //Barra de Busqueda
 
+    //Const para llamar las notas desde el server
     const fetchNotes = async () => {
         const response = await fetch('/notas');
         const notes = await response.json();
         renderNotes(notes);
     };
 
+    //Renderiza las notas
     const renderNotes = (notes) => {
         notesGrid.innerHTML = '';
         notes.forEach(note => {
-            const noteElement = document.createElement('div');
-            noteElement.classList.add('col-md-4');
+            const noteElement = document.createElement('div'); //Crea un div para cada nota
+            noteElement.classList.add('col-md-4'); 
             noteElement.innerHTML = `
                 <div style="background-color: white; color: black; "class="card mb-3">
                     <div  class="card-body">
@@ -30,37 +32,41 @@ document.addEventListener('DOMContentLoaded', () => {
             notesGrid.appendChild(noteElement);
         });
 
+        //Agrega eventos para los botones de editar notas
         document.querySelectorAll('.edit-note').forEach(button => {
             button.addEventListener('click', (e) => {
-                const noteId = e.target.getAttribute('data-id');
-                window.location.href = `/edit?id=${noteId}`;
+                const noteId = e.target.getAttribute('data-id'); //Obtiene el id de la nota
+                window.location.href = `/edit?id=${noteId}`; //Referencia a la pagina de edit.html
             });
         });
 
+        //Agrega eventos a los botones de eliminar notas 
         document.querySelectorAll('.delete-note').forEach(button => {
             button.addEventListener('click', async (e) => {
-                const noteId = e.target.getAttribute('data-id');
-                await fetch(`/notas/${noteId}`, { method: 'DELETE' });
-                alert('Nota eliminada con éxito');
-                fetchNotes();
+                const noteId = e.target.getAttribute('data-id'); //Obtiene el id de la nota
+                await fetch(`/notas/${noteId}`, { method: 'DELETE' }); //Llama al metodo de elimar notas
+                alert('Nota eliminada con éxito'); //Mensaje de alerta 
+                fetchNotes(); //Vuelve a cargar las notas
             });
         });
     };
 
+    //Evento para el boton de crear nueva nota
     addNoteButton.addEventListener('click', () => {
-        window.location.href = '/edit';
+        window.location.href = '/edit'; //Redirige a la pagina de edit
     });
 
+    //Evento para la barra de busqueda
     searchBar.addEventListener('input', async (e) => {
         const query = e.target.value.toLowerCase();
-        const response = await fetch('/notas');
-        const notes = await response.json();
-        const filteredNotes = notes.filter(note => 
+        const response = await fetch('/notas'); //Obtiene las notas
+        const notes = await response.json(); // Convierte la respuesta en objetos
+        const filteredNotes = notes.filter(note => //Filtrado de busqueda por titulo y Etiqueta
             note.titulo.toLowerCase().includes(query) ||
             note.etiquetas.some(tag => tag.toLowerCase().includes(query))
         );
-        renderNotes(filteredNotes);
+        renderNotes(filteredNotes); //Renderiza las notas filtradas
     });
 
-    fetchNotes();
+    fetchNotes(); //Carga las notas
 });
